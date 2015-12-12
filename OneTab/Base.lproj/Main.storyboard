@@ -71,9 +71,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-32-0LL">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Close page" id="C2H-Ir-Jvs">
+                                    <barButtonItem title="Go Back" id="C2H-Ir-Jvs">
                                         <connections>
-                                            <action selector="closePage:" destination="BYZ-38-t0r" id="jb4-KQ-Hry"/>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="sGi-ak-JEi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VQg-mt-LY5"/>
+                                    <barButtonItem title="Refresh" id="jTE-eg-z2c">
+                                        <connections>
+                                            <action selector="refreshPage:" destination="BYZ-38-t0r" id="SaX-ug-xTv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WoY-7j-Wiv"/>
+                                    <barButtonItem title="Google" id="Atf-TT-tSs">
+                                        <connections>
+                                            <action selector="newInitialPage:" destination="BYZ-38-t0r" id="QnO-wc-NNF"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
