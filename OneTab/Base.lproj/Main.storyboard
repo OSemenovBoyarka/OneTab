@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="Amh-1v-qHl"/>
                             <constraint firstItem="3bm-c8-Il3" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="K7J-Gv-Unl"/>
@@ -84,9 +84,14 @@
                                     <constraint firstAttribute="height" constant="64" id="BNX-8T-Q3x"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="OneTab" id="Yju-K5-6e7"/>
+                                    <navigationItem id="Yju-K5-6e7">
+                                        <nil key="title"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8I0-9m-OGX">
+                                <rect key="frame" x="0.0" y="64" width="600" height="3"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -102,10 +107,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8kp-32-0LL" secondAttribute="bottom" id="cNa-0g-8So"/>
                             <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="dky-p5-pnj"/>
                             <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="j7F-oT-gKn"/>
+                            <constraint firstItem="8I0-9m-OGX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="noc-b5-sel"/>
                             <constraint firstAttribute="trailing" secondItem="8kp-32-0LL" secondAttribute="trailing" id="pEq-Pg-HZb"/>
+                            <constraint firstItem="8I0-9m-OGX" firstAttribute="top" secondItem="wji-kP-m7r" secondAttribute="bottom" id="pdu-Zg-yyn"/>
                             <constraint firstAttribute="trailing" secondItem="MKU-qB-Hf6" secondAttribute="trailing" id="qbF-kd-rgc"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tP7-Kt-OhO"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wvy-Cx-T0a"/>
+                            <constraint firstItem="8I0-9m-OGX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xAu-LQ-u3X"/>
                             <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="xCz-Sd-jsd"/>
                         </constraints>
                         <variation key="default">
@@ -121,9 +129,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="bottomBar" destination="8kp-32-0LL" id="Waa-D5-pEr"/>
-                        <outlet property="topBar" destination="wji-kP-m7r" id="Ng5-7F-eX3"/>
+                        <outlet property="bottomBar" destination="8kp-32-0LL" id="LSV-ux-w96"/>
+                        <outlet property="topBar" destination="wji-kP-m7r" id="szT-EQ-2EO"/>
                         <outlet property="webViewContainer" destination="MKU-qB-Hf6" id="A4w-gM-8fm"/>
+                        <outlet property="webViewProgress" destination="8I0-9m-OGX" id="tyc-41-tTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
