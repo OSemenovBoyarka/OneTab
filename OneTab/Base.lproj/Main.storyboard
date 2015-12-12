@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -29,7 +28,10 @@
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wji-kP-m7r">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="BNX-8T-Q3x"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="OneTab" id="Yju-K5-6e7"/>
                                 </items>
@@ -37,7 +39,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3CV-5i-pAx"/>
+                            <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="3CV-5i-pAx"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ABz-kr-J9B"/>
                             <constraint firstAttribute="trailing" secondItem="wji-kP-m7r" secondAttribute="trailing" id="Hr3-PH-MEc"/>
                             <constraint firstItem="8kp-32-0LL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IHa-Ov-pz5"/>
@@ -53,19 +55,23 @@
                             <constraint firstAttribute="trailing" secondItem="MKU-qB-Hf6" secondAttribute="trailing" id="qbF-kd-rgc"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tP7-Kt-OhO"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wvy-Cx-T0a"/>
+                            <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="xCz-Sd-jsd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dky-p5-pnj"/>
-                                <exclude reference="j7F-oT-gKn"/>
                                 <exclude reference="UgX-Rp-osQ"/>
                                 <exclude reference="qbF-kd-rgc"/>
                                 <exclude reference="wvy-Cx-T0a"/>
+                                <exclude reference="3CV-5i-pAx"/>
+                                <exclude reference="dky-p5-pnj"/>
+                                <exclude reference="j7F-oT-gKn"/>
                                 <exclude reference="PzV-zA-3D0"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomBar" destination="8kp-32-0LL" id="Waa-D5-pEr"/>
+                        <outlet property="topBar" destination="wji-kP-m7r" id="Ng5-7F-eX3"/>
                         <outlet property="webViewContainer" destination="MKU-qB-Hf6" id="A4w-gM-8fm"/>
                     </connections>
                 </viewController>
