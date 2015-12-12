@@ -11,7 +11,7 @@ import UIKit
 class EmptyViewController: UIViewController {
 
     @IBAction func newTabClicked(sender: AnyObject) {
-        let webViewVC = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController") as! ViewController
+        let webViewVC = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController") as! WebTabController
         let url = NSURL(string: "https://google.com")!
         webViewVC.baseUrl = url
         presentViewController(webViewVC, animated: true, completion: nil)

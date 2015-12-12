@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import PureLayout
 
-class ViewController: UIViewController {
+class WebTabController: UIViewController {
     
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         webView.scrollView.contentInset = UIEdgeInsetsMake(topBar.frame.size.height, 0, bottomBar.frame.size.height, 0)
     }
 
+    @IBAction func closePage(sender: AnyObject) {
+        self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
 

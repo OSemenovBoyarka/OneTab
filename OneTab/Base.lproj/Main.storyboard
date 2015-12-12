@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-297" y="-74"/>
         </scene>
-        <!--View Controller-->
+        <!--Web Tab Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="webViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="OneTab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewController" id="BYZ-38-t0r" customClass="WebTabController" customModule="OneTab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -67,7 +67,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-32-0LL">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="C2H-Ir-Jvs"/>
+                                    <barButtonItem title="Close page" id="C2H-Ir-Jvs">
+                                        <connections>
+                                            <action selector="closePage:" destination="BYZ-38-t0r" id="jb4-KQ-Hry"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wji-kP-m7r">
