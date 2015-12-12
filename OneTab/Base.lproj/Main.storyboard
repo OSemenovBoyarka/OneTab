@@ -43,6 +43,10 @@
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" id="e85-6r-8t4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetingsLabel" destination="Zj7-sw-Pcy" id="hyl-mG-WI6"/>
+                        <outlet property="newPageButton" destination="3bm-c8-Il3" id="8wE-Wb-Hnx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhy-tJ-0Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
