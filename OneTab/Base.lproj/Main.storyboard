@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zij-ZB-HaO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Empty VC-->
+        <scene sceneID="eXA-jf-Ty4">
+            <objects>
+                <viewController title="Empty VC" id="Zij-ZB-HaO" customClass="EmptyViewController" customModule="OneTab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3vY-YL-2wj"/>
+                        <viewControllerLayoutGuide type="bottom" id="r4f-M6-5vX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XDj-m6-zTf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-sw-Pcy">
+                                <rect key="frame" x="22" y="254" width="556" height="91"/>
+                                <string key="text">Wellcome to OneTab! This app will change the way, you use web on your mobile device.  Actually, you already use regular browser this way, but haven't noticed it yet ;)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bm-c8-Il3">
+                                <rect key="frame" x="183" y="375" width="234" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title=" Wellcome to new world"/>
+                                <connections>
+                                    <action selector="newTabClicked:" destination="Zij-ZB-HaO" eventType="touchUpInside" id="CH1-Pl-lgP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="Amh-1v-qHl"/>
+                            <constraint firstItem="3bm-c8-Il3" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="K7J-Gv-Unl"/>
+                            <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" id="OGd-Fy-Akf"/>
+                            <constraint firstItem="3bm-c8-Il3" firstAttribute="top" secondItem="Zj7-sw-Pcy" secondAttribute="bottom" constant="30" id="Q8b-ya-ajr"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Zj7-sw-Pcy" secondAttribute="trailing" id="caz-b8-n38"/>
+                            <constraint firstItem="Zj7-sw-Pcy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" id="e85-6r-8t4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhy-tJ-0Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="-74"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OneTab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="OneTab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -77,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163" y="309"/>
+            <point key="canvasLocation" x="-319" y="730"/>
         </scene>
     </scenes>
 </document>

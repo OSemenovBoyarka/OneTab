@@ -11,18 +11,18 @@ import WebKit
 import PureLayout
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
     @IBOutlet weak var webViewContainer: UIView!
 
     var webView: WKWebView!
+    var baseUrl: NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let url = NSURL(string: "https://google.com")!
-        webView.loadRequest(NSURLRequest(URL:url))
+        initWebView()
+        webView.loadRequest(NSURLRequest(URL:self.baseUrl!))
     }
 
     private func initWebView(){
