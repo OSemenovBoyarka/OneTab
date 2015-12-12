@@ -66,7 +66,7 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func newInitialPage(sender: AnyObject) {
-        if (!webView.canGoBack){
+        if (webView.canGoBack){
             webView.loadRequest(NSURLRequest(URL: self.baseUrl!))
         }
     }
