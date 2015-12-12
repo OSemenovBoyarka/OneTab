@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import PureLayout
 
-class ViewController: UIViewController<WKWEbView> {
+class ViewController: UIViewController {
 
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
@@ -30,7 +30,6 @@ class ViewController: UIViewController<WKWEbView> {
         webViewContainer.addSubview(webView)
         webView.autoPinEdgesToSuperviewEdges()
         webView.scrollView.contentInset = UIEdgeInsetsMake(topBar.frame.size.height, 0, bottomBar.frame.size.height, 0)
-
     }
 
 
