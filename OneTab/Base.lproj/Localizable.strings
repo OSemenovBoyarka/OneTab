@@ -5,10 +5,10 @@
   Created by Alexander Semenov on 12/12/15.
   Copyright © 2015 X-mass Three. All rights reserved.
 */
-"GREETING_INITIAL"="Wellcome to OneTab! This app will change the way, you use web on your mobile device. Actually, you already use regular browser this way, but haven't noticed it yet ;)";
+"GREETING_INITIAL"="Welcome to OneTab! This app will change the way, you use web on your mobile device. Actually, you already use regular browser this way, but haven't noticed it yet ;)";
 
 "NEW_PAGE_INITIAL"="Click to start";
 
-"GREETING_NORMAL"="Wow! You have finished with all your businness! Contratulations!";
+"GREETING_NORMAL"="Wow! You have finished with all your business! Congratulations!";
 
 "NEW_PAGE_NORMAL"="Open new page";
