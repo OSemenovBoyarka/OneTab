@@ -71,19 +71,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-32-0LL">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Go Back" id="C2H-Ir-Jvs">
+                                    <barButtonItem image="close" id="C2H-Ir-Jvs">
                                         <connections>
                                             <action selector="goBack:" destination="BYZ-38-t0r" id="sGi-ak-JEi"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VQg-mt-LY5"/>
-                                    <barButtonItem title="Refresh" id="jTE-eg-z2c">
+                                    <barButtonItem image="back" id="jTE-eg-z2c">
                                         <connections>
                                             <action selector="refreshPage:" destination="BYZ-38-t0r" id="SaX-ug-xTv"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WoY-7j-Wiv"/>
-                                    <barButtonItem title="Google" id="Atf-TT-tSs">
+                                    <barButtonItem image="google1" id="Atf-TT-tSs">
                                         <connections>
                                             <action selector="newInitialPage:" destination="BYZ-38-t0r" id="QnO-wc-NNF"/>
                                         </connections>
@@ -152,4 +152,9 @@
             <point key="canvasLocation" x="-319" y="730"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="22" height="22"/>
+        <image name="close" width="22" height="22"/>
+        <image name="google1" width="44" height="22"/>
+    </resources>
 </document>
