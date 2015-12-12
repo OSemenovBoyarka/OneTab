@@ -34,6 +34,7 @@ class WebTabController: UIViewController, WKNavigationDelegate {
         let insets = UIEdgeInsetsMake(topBar.frame.size.height, 0, bottomBar.frame.size.height, 0)
         webView.scrollView.contentInset = insets
         webView.scrollView.scrollIndicatorInsets = insets
+        webView.allowsBackForwardNavigationGestures = true
     }
 
     override func viewWillAppear(animated: Bool) {
