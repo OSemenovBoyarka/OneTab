@@ -10,7 +10,7 @@ import WebKit
 
 class NotificationManager: NSObject {
 
-    var pendingNotification: WebPageReminder?
+    var pendingReminder: WebPageReminder? 
     
     static let sharedInstance = NotificationManager()
 
@@ -29,7 +29,7 @@ class NotificationManager: NSObject {
 }
 
 class WebPageReminder {
-    var host:NSString?
-    var url:NSString?
-    var title:NSString?
+    var host:String = ""
+    var url:String = ""
+    var title:String = ""
 }

@@ -38,6 +38,11 @@ class EmptyViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveReminder:", name:"receiveReminder" , object: nil)
+        if let reminder = NotificationManager.sharedInstance.pendingReminder {
+            showReminder(reminder)
+            NotificationManager.sharedInstance.pendingReminder = nil
+        }
+
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -46,20 +51,29 @@ class EmptyViewController: UIViewController {
     }
     
     @objc func didReceiveReminder(notification: NSNotification){
-        let urlStr = notification.userInfo!["url"] as! String
-        let host = notification.userInfo!["host"] as! String
-        let title = notification.userInfo!["title"] as! String
-        let alert = UIAlertController(title: title, message: "You reminder for \(host)", preferredStyle: .Alert)
+        NotificationManager.sharedInstance.pendingReminder = nil
+        
+        let reminder = WebPageReminder()
+        reminder.url = notification.userInfo!["url"] as! String
+        reminder.host = notification.userInfo!["host"] as! String
+        reminder.title =  notification.userInfo!["title"] as! String
+        showReminder(reminder)
+    }
+    
+    
+    func showReminder(reminder: WebPageReminder){
+        let alert = UIAlertController(title: title, message: "You reminder for \(reminder.host)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Open", style: .Default, handler: {
             (action: UIAlertAction) -> Void in
-            let url = NSURL(string: urlStr)!
+            let url = NSURL(string: reminder.url)!
             let webViewVC = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController") as! WebTabController
             webViewVC.baseUrl = url
             self.presentViewController(webViewVC, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                 self.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
+
 
 
 }

@@ -40,6 +40,10 @@ class WebTabController: UIViewController, WKNavigationDelegate {
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveReminder:", name:"receiveReminder" , object: nil)
+        if let reminder = NotificationManager.sharedInstance.pendingReminder {
+            showReminder(reminder)
+            NotificationManager.sharedInstance.pendingReminder = nil
+        }
 
     }
     
@@ -50,17 +54,25 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     }
     
     @objc func didReceiveReminder(notification: NSNotification){
-        let urlStr = notification.userInfo!["url"] as! String
-        let host = notification.userInfo!["host"] as! String
-        let title = notification.userInfo!["title"] as! String
-        let alert = UIAlertController(title: title, message: "You reminder for \(host)", preferredStyle: .Alert)
+        NotificationManager.sharedInstance.pendingReminder = nil
+        
+        let reminder = WebPageReminder()
+        reminder.url = notification.userInfo!["url"] as! String
+        reminder.host = notification.userInfo!["host"] as! String
+        reminder.title =  notification.userInfo!["title"] as! String
+        showReminder(reminder)
+    
+    }
+    
+    func showReminder(reminder: WebPageReminder){
+        let alert = UIAlertController(title: title, message: "You reminder for \(reminder.host)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Open", style: .Default, handler: {
             (action: UIAlertAction) -> Void in
-            let url = NSURL(string: urlStr)!
+            let url = NSURL(string: reminder.url)!
             self.webView.loadRequest(NSURLRequest(URL: url))
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-         self.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     private func initWebView() {

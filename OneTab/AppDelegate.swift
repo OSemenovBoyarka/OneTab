@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reminder.url = url
         reminder.host = host
         reminder.title = title
+        NotificationManager.sharedInstance.pendingReminder = reminder
         
         NSNotificationCenter.defaultCenter().postNotificationName("receiveReminder", object: self, userInfo: notification.userInfo)
     }
-
 
 }
 
