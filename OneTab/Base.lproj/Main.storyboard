@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zij-ZB-HaO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,34 +18,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-sw-Pcy">
-                                <rect key="frame" x="22" y="254" width="556" height="91"/>
-                                <string key="text">Wellcome to OneTab! This app will change the way, you use web on your mobile device.  Actually, you already use regular browser this way, but haven't noticed it yet ;)</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FON" translatesAutoresizingMaskIntoConstraints="NO" id="fRb-xB-VcI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELLCOME  to OneTab!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-sw-Pcy">
+                                <rect key="frame" x="216" y="111" width="168" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bm-c8-Il3">
-                                <rect key="frame" x="183" y="375" width="234" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title=" Wellcome to new world"/>
+                                <rect key="frame" x="153" y="401" width="294" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="isY-7r-xGz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
+                                <state key="normal" title=" Wellcome to new world">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="isY-7r-xGz"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="newTabClicked:" destination="Zij-ZB-HaO" eventType="touchUpInside" id="CH1-Pl-lgP"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO1" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-dr-1YO">
+                                <rect key="frame" x="250" y="200" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Wmt-n8-NJs"/>
+                                    <constraint firstAttribute="width" secondItem="Abr-dr-1YO" secondAttribute="height" multiplier="1:1" id="ia3-qL-lxc"/>
+                                    <constraint firstAttribute="height" constant="100" id="l3g-mC-wO3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Wmt-n8-NJs"/>
+                                        <exclude reference="ia3-qL-lxc"/>
+                                        <exclude reference="l3g-mC-wO3"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-ym-bHg">
+                                <rect key="frame" x="50" y="320" width="500" height="61"/>
+                                <string key="text">This app will change the way, you use web on your mobile device. Actually, you already use regular browser this way, but haven't noticed it yet ;)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fRb-xB-VcI" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" id="53T-Gc-nyr"/>
+                            <constraint firstItem="Abr-dr-1YO" firstAttribute="top" secondItem="Zj7-sw-Pcy" secondAttribute="bottom" constant="15" id="6V3-Wu-j6D"/>
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="Amh-1v-qHl"/>
+                            <constraint firstItem="Abr-dr-1YO" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" constant="-50" id="Fk3-L3-jsf"/>
+                            <constraint firstItem="3bm-c8-Il3" firstAttribute="top" secondItem="eqC-ym-bHg" secondAttribute="bottom" constant="20" id="GT5-Md-yBr"/>
+                            <constraint firstItem="eqC-ym-bHg" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="IQA-UR-UYh"/>
                             <constraint firstItem="3bm-c8-Il3" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="K7J-Gv-Unl"/>
-                            <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" id="OGd-Fy-Akf"/>
-                            <constraint firstItem="3bm-c8-Il3" firstAttribute="top" secondItem="Zj7-sw-Pcy" secondAttribute="bottom" constant="30" id="Q8b-ya-ajr"/>
+                            <constraint firstItem="fRb-xB-VcI" firstAttribute="height" secondItem="XDj-m6-zTf" secondAttribute="height" id="Nz7-4s-ynM"/>
+                            <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" constant="-100" id="OGd-Fy-Akf"/>
+                            <constraint firstItem="eqC-ym-bHg" firstAttribute="width" secondItem="Zj7-sw-Pcy" secondAttribute="width" id="QR0-A8-XRm"/>
+                            <constraint firstItem="eqC-ym-bHg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" constant="30" id="TJe-LN-9cp"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Zj7-sw-Pcy" secondAttribute="trailing" id="caz-b8-n38"/>
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" id="e85-6r-8t4"/>
+                            <constraint firstItem="eqC-ym-bHg" firstAttribute="top" secondItem="Abr-dr-1YO" secondAttribute="bottom" constant="20" id="fru-HP-0NR"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eqC-ym-bHg" secondAttribute="trailing" constant="30" id="hDX-sm-V28"/>
+                            <constraint firstItem="fRb-xB-VcI" firstAttribute="width" secondItem="XDj-m6-zTf" secondAttribute="width" id="m1s-Lq-sg0"/>
+                            <constraint firstItem="fRb-xB-VcI" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="rn2-vB-mLV"/>
+                            <constraint firstItem="Abr-dr-1YO" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="uWB-p3-C0P"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OGd-Fy-Akf"/>
+                                <exclude reference="QR0-A8-XRm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="greetingsLabel" destination="Zj7-sw-Pcy" id="hyl-mG-WI6"/>
+                        <outlet property="greetingsLabel" destination="eqC-ym-bHg" id="4ZA-4U-pts"/>
                         <outlet property="newPageButton" destination="3bm-c8-Il3" id="8wE-Wb-Hnx"/>
                     </connections>
                 </viewController>
@@ -70,7 +132,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-wg-Fh2">
                                         <rect key="frame" x="460" y="64" width="140" height="492"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reminder" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-qr-Pdf">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Reminder" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-qr-Pdf">
                                                 <rect key="frame" x="20" y="271" width="100" height="100"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geolocation" translatesAutoresizingMaskIntoConstraints="NO" id="fRz-Ax-WdC">
@@ -196,7 +258,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FON" width="360" height="640"/>
         <image name="Geolocation" width="100" height="100"/>
+        <image name="LOGO1" width="100" height="100"/>
         <image name="Reminder" width="100" height="100"/>
         <image name="back" width="22" height="22"/>
         <image name="close" width="22" height="22"/>
