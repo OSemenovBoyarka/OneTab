@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELLCOME  to OneTab!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-sw-Pcy">
-                                <rect key="frame" x="216" y="111" width="168" height="74"/>
+                                <rect key="frame" x="216" y="101" width="168" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bm-c8-Il3">
-                                <rect key="frame" x="153" y="401" width="294" height="39"/>
+                                <rect key="frame" x="153" y="451" width="294" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="isY-7r-xGz"/>
                                 </constraints>
@@ -54,7 +54,7 @@
                                     <action selector="newTabClicked:" destination="Zij-ZB-HaO" eventType="touchUpInside" id="CH1-Pl-lgP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO1" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-dr-1YO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGOO" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-dr-1YO">
                                 <rect key="frame" x="250" y="200" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Wmt-n8-NJs"/>
@@ -70,7 +70,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-ym-bHg">
-                                <rect key="frame" x="50" y="320" width="500" height="61"/>
+                                <rect key="frame" x="50" y="340" width="500" height="61"/>
                                 <string key="text">This app will change the way, you use web on your mobile device. Actually, you already use regular browser this way, but haven't noticed it yet ;)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,10 +80,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fRb-xB-VcI" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" id="53T-Gc-nyr"/>
-                            <constraint firstItem="Abr-dr-1YO" firstAttribute="top" secondItem="Zj7-sw-Pcy" secondAttribute="bottom" constant="15" id="6V3-Wu-j6D"/>
+                            <constraint firstItem="Abr-dr-1YO" firstAttribute="top" secondItem="Zj7-sw-Pcy" secondAttribute="bottom" constant="25" id="6V3-Wu-j6D"/>
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="Amh-1v-qHl"/>
                             <constraint firstItem="Abr-dr-1YO" firstAttribute="centerY" secondItem="XDj-m6-zTf" secondAttribute="centerY" constant="-50" id="Fk3-L3-jsf"/>
-                            <constraint firstItem="3bm-c8-Il3" firstAttribute="top" secondItem="eqC-ym-bHg" secondAttribute="bottom" constant="20" id="GT5-Md-yBr"/>
+                            <constraint firstItem="3bm-c8-Il3" firstAttribute="top" secondItem="eqC-ym-bHg" secondAttribute="bottom" constant="50" id="GT5-Md-yBr"/>
                             <constraint firstItem="eqC-ym-bHg" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="IQA-UR-UYh"/>
                             <constraint firstItem="3bm-c8-Il3" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="K7J-Gv-Unl"/>
                             <constraint firstItem="fRb-xB-VcI" firstAttribute="height" secondItem="XDj-m6-zTf" secondAttribute="height" id="Nz7-4s-ynM"/>
@@ -92,7 +92,7 @@
                             <constraint firstItem="eqC-ym-bHg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" constant="30" id="TJe-LN-9cp"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Zj7-sw-Pcy" secondAttribute="trailing" id="caz-b8-n38"/>
                             <constraint firstItem="Zj7-sw-Pcy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XDj-m6-zTf" secondAttribute="leadingMargin" id="e85-6r-8t4"/>
-                            <constraint firstItem="eqC-ym-bHg" firstAttribute="top" secondItem="Abr-dr-1YO" secondAttribute="bottom" constant="20" id="fru-HP-0NR"/>
+                            <constraint firstItem="eqC-ym-bHg" firstAttribute="top" secondItem="Abr-dr-1YO" secondAttribute="bottom" constant="40" id="fru-HP-0NR"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eqC-ym-bHg" secondAttribute="trailing" constant="30" id="hDX-sm-V28"/>
                             <constraint firstItem="fRb-xB-VcI" firstAttribute="width" secondItem="XDj-m6-zTf" secondAttribute="width" id="m1s-Lq-sg0"/>
                             <constraint firstItem="fRb-xB-VcI" firstAttribute="centerX" secondItem="XDj-m6-zTf" secondAttribute="centerX" id="rn2-vB-mLV"/>
@@ -105,6 +105,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="greetingsLabel" destination="eqC-ym-bHg" id="4ZA-4U-pts"/>
                         <outlet property="newPageButton" destination="3bm-c8-Il3" id="8wE-Wb-Hnx"/>
@@ -260,7 +261,7 @@
     <resources>
         <image name="FON" width="360" height="640"/>
         <image name="Geolocation" width="100" height="100"/>
-        <image name="LOGO1" width="100" height="100"/>
+        <image name="LOGOO" width="100" height="100"/>
         <image name="Reminder" width="100" height="100"/>
         <image name="back" width="22" height="22"/>
         <image name="close" width="22" height="22"/>

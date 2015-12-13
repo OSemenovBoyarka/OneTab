@@ -17,6 +17,12 @@ class EmptyViewController: UIViewController {
         super.viewDidLoad()
         self.greetingsLabel.text = NSLocalizedString("GREETING_INITIAL", comment: "")
         self.newPageButton.setTitle(NSLocalizedString("NEW_PAGE_INITIAL", comment: ""), forState: .Normal)
+
+    }
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     @IBAction func newTabClicked(sender: AnyObject) {

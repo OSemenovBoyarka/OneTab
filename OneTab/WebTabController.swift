@@ -31,11 +31,16 @@ class WebTabController: UIViewController, WKNavigationDelegate {
         webView.loadRequest(NSURLRequest(URL: self.baseUrl!))
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveReminder:", name:"receiveReminder" , object: nil)
+
     }
     
     override func viewDidDisappear(animated: Bool) {
