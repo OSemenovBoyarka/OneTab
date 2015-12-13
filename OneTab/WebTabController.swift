@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import RMDateSelectionViewController
 
 class WebTabController: UIViewController, WKNavigationDelegate {
 
@@ -87,17 +88,51 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     private func initNotificationGesture(){
         webViewContainer.callback = {
             NSLog("Swipe callback called!")
-            let alert = UIAlertController(title: "Remind later", message: "Great! Now choose time or place to remind about this page", preferredStyle: .ActionSheet)
-//            alert.addAction(UIAlertAction(title: "5 min", style: .Default, handler: self.dateHandler))
-//            alert.addAction(UIAlertAction(title: "15 min", style: .Default,  handler: self.dateHandler))
-//            alert.addAction(UIAlertAction(title: "1 Hour", style: .Default, handler: self.dateHandler))
-            alert.addAction(UIAlertAction(title: "Choose time", style: .Default, handler: self.dateHandler))
-            alert.addAction(UIAlertAction(title: "Choose date", style: .Default, handler: self.dateHandler))
+            let datePicker = RMDateSelectionViewController(style: .White)!
+            datePicker.title = "Remind later"
+            datePicker.message = "Great! Now choose time or place to remind about this page"
+           
             
-            alert.addAction(UIAlertAction(title: "Choose place", style: .Default, handler: self.dateHandler))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            datePicker.addAction(RMAction(title: "Choose place", style: .Done, andHandler:  { (action: RMActionController) -> Void in
+                    self.goBack(action)
+            })!)
+            
+            datePicker.addAction(RMAction(title: "Use time", style: .Done, andHandler:  { (action: RMActionController) -> Void in
+                    self.goBack(action)
+            })!)
+       
+            datePicker.addAction(RMAction(title: "Cancel", style: .Cancel, andHandler: nil)!)
+            
+           
+            let groupedAction = RMGroupedAction(style: .Additional, andActions:
+                [self.datePickerActionForMinutes(5),
+                self.datePickerActionForMinutes(15),
+                self.datePickerActionForMinutes(30),
+                self.datePickerActionForMinutes(45)]);
+            datePicker.addAction(groupedAction!)
+            
+            let tommorowAction = RMAction(title: "Tomorrow", style: .Additional) { controller -> Void in
+                if let dateController = controller as? RMDateSelectionViewController {
+                    //adding 1 day - TODO this shoud set predefined time for ex 8.am
+                    dateController.datePicker.date = NSDate().dateByAddingTimeInterval(60*60*24);
+                }
+            }!
+            tommorowAction.dismissesActionController = false;
+            datePicker.addAction(tommorowAction)
+            datePicker.datePicker.minimumDate = NSDate()
+            datePicker.datePicker.date = NSDate(timeIntervalSinceNow: 300) // 5 min by default
+            self.presentViewController(datePicker, animated: true, completion: nil)
         }
+    }
+    
+    func datePickerActionForMinutes(minutes: Int) -> (RMAction) {
+        let minAction = RMAction(title: "\(minutes) Min", style: .Additional) { controller -> Void in
+            if let dateController = controller as? RMDateSelectionViewController {
+                dateController.datePicker.date = NSDate(timeIntervalSinceNow: Double(minutes)*60);
+            }
+        }
+        minAction!.dismissesActionController = false;
+        return minAction!
     }
     
     // MARK: - WKWebViewNavigationDelegate

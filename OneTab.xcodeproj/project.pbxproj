@@ -22,6 +22,7 @@
 		277BEF20E2A6BE2AA2BC52D3 /* Pods-OneTab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTab.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneTab/Pods-OneTab.release.xcconfig"; sourceTree = "<group>"; };
 		BABEAD38C6F7ECC9E19C9EAD /* Pods_OneTab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneTab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBD2E5522FF7E0C68EC873F /* Pods-OneTab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneTab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneTab/Pods-OneTab.debug.xcconfig"; sourceTree = "<group>"; };
+		FA4430FA1C1D638E0064C23A /* OneTab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneTab-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA9843DA1C1C5E74008F7BA9 /* OneTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9843DD1C1C5E74008F7BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9843DF1C1C5E74008F7BA9 /* WebTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebTabController.swift; sourceTree = "<group>"; };
@@ -84,7 +85,8 @@
 		FA9843DC1C1C5E74008F7BA9 /* OneTab */ = {
 			isa = PBXGroup;
 			children = (
-				FA9843F11C1C7582008F7BA9 /* ViewControllers */,
+				FA9843DF1C1C5E74008F7BA9 /* WebTabController.swift */,
+				FA9843EF1C1C74F3008F7BA9 /* EmptyViewController.swift */,
 				FA9843DD1C1C5E74008F7BA9 /* AppDelegate.swift */,
 				FA9843E11C1C5E74008F7BA9 /* Main.storyboard */,
 				FA9843E41C1C5E74008F7BA9 /* Assets.xcassets */,
@@ -92,17 +94,9 @@
 				FA9843E91C1C5E74008F7BA9 /* Info.plist */,
 				FA9843F61C1C7B86008F7BA9 /* Localizable.strings */,
 				FADD48261C1CE48E006E274A /* SwiperViewContainer.swift */,
+				FA4430FA1C1D638E0064C23A /* OneTab-Bridging-Header.h */,
 			);
 			path = OneTab;
-			sourceTree = "<group>";
-		};
-		FA9843F11C1C7582008F7BA9 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				FA9843DF1C1C5E74008F7BA9 /* WebTabController.swift */,
-				FA9843EF1C1C74F3008F7BA9 /* EmptyViewController.swift */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +347,14 @@
 			baseConfigurationReference = EDBD2E5522FF7E0C68EC873F /* Pods-OneTab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OneTab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.githun.SemenovAlexander.OneTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OneTab/OneTab-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -366,11 +363,13 @@
 			baseConfigurationReference = 277BEF20E2A6BE2AA2BC52D3 /* Pods-OneTab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OneTab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.githun.SemenovAlexander.OneTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OneTab/OneTab-Bridging-Header.h";
 			};
 			name = Release;
 		};
