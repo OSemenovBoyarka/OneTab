@@ -64,9 +64,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKU-qB-Hf6">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKU-qB-Hf6" customClass="SwiperViewContainer" customModule="OneTab" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-wg-Fh2">
+                                        <rect key="frame" x="460" y="64" width="140" height="492"/>
+                                        <color key="backgroundColor" red="1" green="0.5898699664" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="eWb-1I-HHb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0uI-wg-Fh2" firstAttribute="top" secondItem="MKU-qB-Hf6" secondAttribute="topMargin" id="Ktp-R8-Gbo"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="0uI-wg-Fh2" secondAttribute="bottom" id="MTg-Cs-JKw"/>
+                                    <constraint firstAttribute="trailing" secondItem="0uI-wg-Fh2" secondAttribute="trailing" id="j1M-1L-TUh"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ktp-R8-Gbo"/>
+                                        <exclude reference="MTg-Cs-JKw"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-32-0LL">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -119,9 +138,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8kp-32-0LL" secondAttribute="bottom" id="cNa-0g-8So"/>
                             <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="dky-p5-pnj"/>
                             <constraint firstItem="wji-kP-m7r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="j7F-oT-gKn"/>
+                            <constraint firstItem="8kp-32-0LL" firstAttribute="top" secondItem="0uI-wg-Fh2" secondAttribute="bottom" id="jqW-uJ-9s1"/>
                             <constraint firstItem="8I0-9m-OGX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="noc-b5-sel"/>
                             <constraint firstAttribute="trailing" secondItem="8kp-32-0LL" secondAttribute="trailing" id="pEq-Pg-HZb"/>
                             <constraint firstItem="8I0-9m-OGX" firstAttribute="top" secondItem="wji-kP-m7r" secondAttribute="bottom" id="pdu-Zg-yyn"/>
+                            <constraint firstItem="0uI-wg-Fh2" firstAttribute="top" secondItem="wji-kP-m7r" secondAttribute="bottom" id="pqB-na-68H"/>
                             <constraint firstAttribute="trailing" secondItem="MKU-qB-Hf6" secondAttribute="trailing" id="qbF-kd-rgc"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tP7-Kt-OhO"/>
                             <constraint firstItem="MKU-qB-Hf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wvy-Cx-T0a"/>
@@ -142,6 +163,8 @@
                     </view>
                     <connections>
                         <outlet property="bottomBar" destination="8kp-32-0LL" id="LSV-ux-w96"/>
+                        <outlet property="setReminderSwipeView" destination="0uI-wg-Fh2" id="gMd-9T-wst"/>
+                        <outlet property="swipeBackroudView" destination="0uI-wg-Fh2" id="LSO-f3-zi6"/>
                         <outlet property="topBar" destination="wji-kP-m7r" id="szT-EQ-2EO"/>
                         <outlet property="webViewContainer" destination="MKU-qB-Hf6" id="A4w-gM-8fm"/>
                         <outlet property="webViewProgress" destination="8I0-9m-OGX" id="tyc-41-tTy"/>

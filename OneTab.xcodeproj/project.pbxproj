@@ -15,6 +15,7 @@
 		FA9843E81C1C5E74008F7BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9843E61C1C5E74008F7BA9 /* LaunchScreen.storyboard */; };
 		FA9843F01C1C74F3008F7BA9 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9843EF1C1C74F3008F7BA9 /* EmptyViewController.swift */; };
 		FA9843F41C1C7B86008F7BA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA9843F61C1C7B86008F7BA9 /* Localizable.strings */; };
+		FADD48271C1CE48E006E274A /* SwiperViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD48261C1CE48E006E274A /* SwiperViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA9843E91C1C5E74008F7BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9843EF1C1C74F3008F7BA9 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		FA9843F51C1C7B86008F7BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FADD48261C1CE48E006E274A /* SwiperViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiperViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				FA9843E61C1C5E74008F7BA9 /* LaunchScreen.storyboard */,
 				FA9843E91C1C5E74008F7BA9 /* Info.plist */,
 				FA9843F61C1C7B86008F7BA9 /* Localizable.strings */,
+				FADD48261C1CE48E006E274A /* SwiperViewContainer.swift */,
 			);
 			path = OneTab;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADD48271C1CE48E006E274A /* SwiperViewContainer.swift in Sources */,
 				FA9843F01C1C74F3008F7BA9 /* EmptyViewController.swift in Sources */,
 				FA9843E01C1C5E74008F7BA9 /* WebTabController.swift in Sources */,
 				FA9843DE1C1C5E74008F7BA9 /* AppDelegate.swift in Sources */,

@@ -13,8 +13,10 @@ class WebTabController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
-    @IBOutlet weak var webViewContainer: UIView!
+    @IBOutlet weak var webViewContainer: SwiperViewContainer!
+    @IBOutlet weak var swipeBackroudView: UIView!
 
+    @IBOutlet weak var setReminderSwipeView: UIView!
     @IBOutlet weak var webViewProgress: UIProgressView!
     var webView: WKWebView!
     var baseUrl: NSURL?
@@ -23,30 +25,34 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initWebView()
+        initNotificationGesture()
         webView.navigationDelegate = self
         webView.loadRequest(NSURLRequest(URL: self.baseUrl!))
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        webView.removeObserver(self, forKeyPath: "estimatedProgress")
     }
 
     private func initWebView() {
         webView = WKWebView(frame: self.webViewContainer.frame)
+        webViewContainer.swipeBackroudView = swipeBackroudView
         webViewContainer.addSubview(webView)
+        webViewContainer.contentView = webView;
+        
         webView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         let insets = UIEdgeInsetsMake(topBar.frame.size.height, 0, bottomBar.frame.size.height, 0)
         webView.scrollView.contentInset = insets
         webView.scrollView.scrollIndicatorInsets = insets
         webView.allowsBackForwardNavigationGestures = true
     }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
-    }
-
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        webView.removeObserver(self, forKeyPath: "estimatedProgress")
-    }
-
+    
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String:AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "estimatedProgress" {
             webViewProgress.progress = Float(webView.estimatedProgress)
@@ -72,6 +78,12 @@ class WebTabController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    // MARK: - Swipe
+    private func initNotificationGesture(){
+        webViewContainer.callback = {
+            NSLog("Swipe callback called!")
+        }
+    }
     
     // MARK: - WKWebViewNavigationDelegate
     func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
