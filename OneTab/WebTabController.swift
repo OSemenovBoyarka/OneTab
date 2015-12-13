@@ -79,9 +79,24 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: - Swipe
+    let dateHandler = { (action: UIAlertAction) -> Void in
+//        goBack(nil)
+    }
+    
+    
     private func initNotificationGesture(){
         webViewContainer.callback = {
             NSLog("Swipe callback called!")
+            let alert = UIAlertController(title: "Remind later", message: "Great! Now choose time or place to remind about this page", preferredStyle: .ActionSheet)
+//            alert.addAction(UIAlertAction(title: "5 min", style: .Default, handler: self.dateHandler))
+//            alert.addAction(UIAlertAction(title: "15 min", style: .Default,  handler: self.dateHandler))
+//            alert.addAction(UIAlertAction(title: "1 Hour", style: .Default, handler: self.dateHandler))
+            alert.addAction(UIAlertAction(title: "Choose time", style: .Default, handler: self.dateHandler))
+            alert.addAction(UIAlertAction(title: "Choose date", style: .Default, handler: self.dateHandler))
+            
+            alert.addAction(UIAlertAction(title: "Choose place", style: .Default, handler: self.dateHandler))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
