@@ -21,7 +21,7 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webViewProgress: UIProgressView!
     var webView: WKWebView!
     var baseUrl: NSURL?
-    var contentLoaded: Bool?
+    var contentLoaded: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,12 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     }
 
     @IBAction func refreshPage(sender: AnyObject) {
-        webView.reload()
+        if (self.contentLoaded) {
+            webView.reload()
+        } else {
+            webView.stopLoading()
+            webView.loadRequest(NSURLRequest(URL: self.baseUrl!))
+        }
     }
     
     @IBAction func newInitialPage(sender: AnyObject) {
@@ -111,7 +116,12 @@ class WebTabController: UIViewController, WKNavigationDelegate {
            
             
             datePicker.addAction(RMAction(title: "Choose place", style: .Done, andHandler:  { (action: RMActionController) -> Void in
-                    self.goBack(action)
+                    let alert = UIAlertController(title: "Ooooops", message: "Coming soon...", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: .Cancel, handler: nil))
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+                
             })!)
             
             datePicker.addAction(RMAction(title: "Use time", style: .Done, andHandler:  { (action: RMActionController) -> Void in

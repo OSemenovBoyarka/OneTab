@@ -10,8 +10,10 @@ import WebKit
 
 class NotificationManager: NSObject {
 
-    static let sharedInstance = NotificationManager()
+    var pendingNotification: WebPageReminder?
     
+    static let sharedInstance = NotificationManager()
+
     func addReminder(time: NSDate, navigationItem: WKBackForwardListItem ){
         let notification  = UILocalNotification()
         notification.fireDate = time
@@ -24,4 +26,10 @@ class NotificationManager: NSObject {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
+}
+
+class WebPageReminder {
+    var host:NSString?
+    var url:NSString?
+    var title:NSString?
 }

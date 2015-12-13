@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let host = notification.userInfo!["host"] as! String
         let title = notification.userInfo!["title"] as! String
         NSLog("didReceiveLocalNotification with url: %@, title %@, host: %@", url, title, host)
+
+        let reminder = WebPageReminder()
+        reminder.url = url
+        reminder.host = host
+        reminder.title = title
+        
         NSNotificationCenter.defaultCenter().postNotificationName("receiveReminder", object: self, userInfo: notification.userInfo)
     }
 
