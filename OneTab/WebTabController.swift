@@ -34,11 +34,28 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveReminder:", name:"receiveReminder" , object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         webView.removeObserver(self, forKeyPath: "estimatedProgress")
+            NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    @objc func didReceiveReminder(notification: NSNotification){
+        let urlStr = notification.userInfo!["url"] as! String
+        let host = notification.userInfo!["host"] as! String
+        let title = notification.userInfo!["title"] as! String
+        let alert = UIAlertController(title: title, message: "You reminder for \(host)", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Open", style: .Default, handler: {
+            (action: UIAlertAction) -> Void in
+            let url = NSURL(string: urlStr)!
+            self.webView.loadRequest(NSURLRequest(URL: url))
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+         self.presentViewController(alert, animated: true, completion: nil)
     }
 
     private func initWebView() {
@@ -80,11 +97,6 @@ class WebTabController: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: - Swipe
-    let dateHandler = { (action: UIAlertAction) -> Void in
-//        goBack(nil)
-    }
-    
-    
     private func initNotificationGesture(){
         webViewContainer.callback = {
             NSLog("Swipe callback called!")
@@ -98,6 +110,9 @@ class WebTabController: UIViewController, WKNavigationDelegate {
             })!)
             
             datePicker.addAction(RMAction(title: "Use time", style: .Done, andHandler:  { (action: RMActionController) -> Void in
+                    if let dateController = action as? RMDateSelectionViewController {
+                              NotificationManager.sharedInstance.addReminder(dateController.datePicker.date, navigationItem: self.webView.backForwardList.currentItem!)
+                    }
                     self.goBack(action)
             })!)
        
