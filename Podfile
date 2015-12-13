@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'OneTab' do
 	pod 'PureLayout'
+	pod 'RMDateSelectionViewController'
 end
 
